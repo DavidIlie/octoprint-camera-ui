@@ -6,7 +6,7 @@ As opposed to my other projects, I decided to use [Express.js](https://expressjs
 
 # Prerequisites
 
-You will need an active [OctoPrint](https://octoprint.org/) instance (by pluggin a webcam into your Pi/Device) running which can be accessed from its IP (not hostname). Afterwards, you need to create a profile API key by clicking on your account on the top right > User Settings > API Key > create an API key
+You will need an active [OctoPrint](https://octoprint.org/) instance (by pluggin a webcam into your Pi/Device) running which can be accessed from its IP (not hostname). Afterwards, you need to create a profile API key by clicking on your account on the top right > User Settings > Application Key > create an API key
 
 With those values create a .env file matching this format and fill in your values:
 
