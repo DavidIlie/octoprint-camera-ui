@@ -2,7 +2,7 @@
 
 The reason I created this project was that I wanted to share to my friends a live camera feed showing the status of my print and other metrics. However, my [OctoPrint](https://octoprint.org/) instance (which controls my printer and webcam) is behind an authentication gateway, courtesy of my [Kubernetes Homelab Tutorial](https://github.com/DavidIlie/kubernetes-setup/tree/master/8%20-%20authelia).
 
-As opposed to my other projects, I decided to use [Express.js](https://expressjs.com/) and [ejs](https://ejs.co/) without any React backend as the app is very basic.
+As opposed to my other projects, I decided to use [Express.js](https://expressjs.com/) and [ejs](https://ejs.co/) as there was no need for a client/server design.
 
 # Prerequisites
 
