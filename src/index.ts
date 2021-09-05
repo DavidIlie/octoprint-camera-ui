@@ -33,12 +33,12 @@ const main = async () => {
         const printerResponse = await printerR.data;
 
         const printingState =
-            printerResponse.state.flags.printing === false
-                ? printerResponse.state.text === "Operational"
-                    ? "Nothing"
-                    : "Heating"
+            printerResponse.state.text === "Operational"
+                ? "Nothing"
                 : jobResponse.state === "Printing"
-                ? "Printing"
+                ? jobResponse.progress.completion <= 0.1
+                    ? "Heating"
+                    : "Printing"
                 : "Nothing";
 
         res.set("Content-Security-Policy", "img-src * 'self' data: http:");

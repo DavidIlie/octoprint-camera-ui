@@ -20,12 +20,39 @@
                         w-full
                     "
                 >
-                    <%if (printingState === "Printing") { %>
+                    <%if (printingState === "Heating") { %>
+                    <h1 class="md:text-4xl text-2xl font-medium">
+                        Almost there! The printer is heating up...
+                    </h1>
+                    <img
+                        class="mt-2 rounded"
+                        src="/video"
+                        alt="Stream Feed"
+                        height="1280"
+                        width="720"
+                    />
+                    <h1 class="mt-2 text-xl font-medium">
+                        Bed Temperature:
+                        <span class="font-mono text-red-200"
+                            ><%= temps.bed %>°C</span
+                        >
+                        - Nozzle Temperature:
+                        <span class="font-mono text-red-200"
+                            ><%= temps.nozzle %>°C</span
+                        >
+                    </h1>
+                    <h1 class="text-xl font-medium">
+                        Printing:
+                        <span class="font-mono text-red-200"
+                            ><%= file.name %></span
+                        >
+                    </h1>
+                    <% } else if (printingState === "Printing") { %>
                     <h1 class="md:text-4xl text-2xl font-medium">
                         Check out what i'm printing:
                     </h1>
                     <img
-                        class="mt-2"
+                        class="mt-2 rounded"
                         src="/video"
                         alt="Stream Feed"
                         height="1280"
@@ -49,33 +76,6 @@
                         Time Left:
                         <span class="font-mono text-red-200"
                             ><%= file.duration %></span
-                        >
-                    </h1>
-                    <% } else if (printingState === "Heating") { %>
-                    <h1 class="md:text-4xl text-2xl font-medium">
-                        Almost there! The printer is heating up...
-                    </h1>
-                    <img
-                        class="mt-2"
-                        src="/video"
-                        alt="Stream Feed"
-                        height="1280"
-                        width="720"
-                    />
-                    <h1 class="mt-2 text-xl font-medium">
-                        Bed Temperature:
-                        <span class="font-mono text-red-200"
-                            ><%= temps.bed %>°C</span
-                        >
-                        - Nozzle Temperature:
-                        <span class="font-mono text-red-200"
-                            ><%= temps.nozzle %>°C</span
-                        >
-                    </h1>
-                    <h1 class="text-xl font-medium">
-                        Printing:
-                        <span class="font-mono text-red-200"
-                            ><%= file.name %></span
                         >
                     </h1>
                     <% } else{ %>
