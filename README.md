@@ -8,6 +8,31 @@ As opposed to my other projects, I decided to use [Express.js](https://expressjs
 
 You will need an active [OctoPrint](https://octoprint.org/) instance (by pluggin a webcam into your Pi/Device) running which can be accessed from its IP (not hostname). Afterwards, you need to create a profile API key by clicking on your account on the top right > User Settings > Application Key > create an API key
 
+# Getting it running with Docker
+
+This resposity contains a docker image which can easily be pulled down to use in a Docker/Kubernetes environment.
+
+```bash
+docker pull ghcr.io/davidilie/octoprint-camera-ui:latest
+```
+
+Modify the comamnd below with **your** values regarding **your** setup and then you can run the command:
+
+```bash
+docker run -d \
+  --name=littlelink-server \
+  -p 5612:5612 \
+  -e OCTO_PRINT_URL='http://0.0.0.0' \
+  -e OCTO_PRINT_API_KEY='aodifbhauosdbasdouauosbdaousd' \
+  -e PORT='5612' \
+  --restart unless-stopped \
+  ghcr.io/davidilie/octoprint-camera-ui:latest
+```
+
+You can modify this to work with Rancher, Portainer, etc.
+
+# Getting it running with node
+
 With those values create a .env file matching this format and fill in your values:
 
 ```env
@@ -22,3 +47,7 @@ Afterwards you should be able to run the app and visit it on `http://localhost:5
 yarn
 yarn dev
 ```
+
+# Contributing
+
+This repository is open to contributions, but I recommend creating an issue so that it can be neatly organised and prevent duplicates.
