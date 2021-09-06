@@ -36,7 +36,7 @@ You can modify this to work with Rancher, Portainer, etc.
 With those values create a .env file matching this format and fill in your values:
 
 ```env
-OCTO_PRINT_URL=http://192.168.1.123
+OCTO_PRINT_URL=http://0.0.0.0
 OCTO_PRINT_API_KEY=apsdhnpaisdbasiodabdoiasdb
 PORT=5612
 ```
