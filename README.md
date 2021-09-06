@@ -20,7 +20,7 @@ Modify the comamnd below with **your** values regarding **your** setup and then 
 
 ```bash
 docker run -d \
-  --name=littlelink-server \
+  --name=octoprint-camera-ui \
   -p 5612:5612 \
   -e OCTO_PRINT_URL='http://0.0.0.0' \
   -e OCTO_PRINT_API_KEY='aodifbhauosdbasdouauosbdaousd' \
